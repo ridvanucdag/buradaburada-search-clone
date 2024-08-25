@@ -1,0 +1,162 @@
+.product-detail {
+  padding: 20px 10%;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-detail-container {
+  display: flex;
+  align-items: flex-start;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.breadcrumbs {
+  margin-bottom: 15px;
+}
+
+.product-image {
+  flex: 0 0 400px;
+  margin-right: 20px;
+}
+
+.product-image img {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+}
+
+.product-info {
+  flex: 2;
+  padding: 20px;
+}
+
+.product-info h1 {
+  font-size: 28px;
+  margin: 0 0 10px;
+  color: #333;
+}
+
+.price {
+  font-size: 24px;
+  font-weight: bold;
+  color: #d9534f;
+  margin: 10px 0;
+}
+
+.brand,
+.color {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.description {
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+.add-to-cart {
+  margin-top: 20px;
+  padding: 12px 20px;
+  color: white;
+  border: none; 
+  border-radius: 10px;
+  cursor: pointer; 
+  font-size: 16px; 
+  transition: background-color 0.3s, transform 0.2s;
+  display: inline-block;
+  width: 250px;
+  opacity: 1;
+}
+
+
+.not-in-cart {
+  background-color: #ff6000;
+}
+
+
+.in-cart {
+  background-color: #5cb85c;
+}
+
+.add-to-cart:hover {
+  transform: scale(1.05);
+}
+
+.in-cart:hover {
+  background-color: #4cae4c;
+}
+
+.not-in-cart:hover {
+  background-color: #e65c00;
+}
+
+.verified-icon-product-detail {
+  background-color: #007bff;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  margin-top: 5px;
+}
+.checkmark-product-detail {
+  color: white;
+  font-size: 13px;
+  margin-bottom: -1px;
+  margin-left: 1px;
+}
+
+.out-of-stock {
+  color: #d9534f;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+.product-specifications {
+  flex: 1;
+  padding: 20px;
+}
+
+.product-specifications h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.product-specifications ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.product-specifications li {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #555;
+}
+
+.customer-reviews {
+  margin-top: 40px;
+  text-align: left;
+  width: 100%;
+}
+
+.customer-reviews h2,
+.review {
+  text-align: left;
+  margin: 0 auto;
+}
+
+.review {
+  border: 1px solid #e0e0e0;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.review p {
+  margin: 5px 0;
+}

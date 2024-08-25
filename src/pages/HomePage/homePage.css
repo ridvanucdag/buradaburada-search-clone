@@ -1,0 +1,12 @@
+.home-page {
+  display: flex;
+  padding: 0 8% 20px 10%;
+}
+.filter-container{
+  margin-top: 10px;
+}
+@media (max-width: 480px) {
+  .filter-container {
+    display: none;
+  }
+}

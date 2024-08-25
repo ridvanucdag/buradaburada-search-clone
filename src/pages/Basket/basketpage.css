@@ -1,0 +1,158 @@
+.basket-page {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 10%;
+}
+
+.basket-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.basket-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.basket-items {
+  flex: 1;
+  margin-right: 20px;
+  min-width: 300px;
+}
+
+.seller-group {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+.add-to-cart {
+  display: flex;
+  padding: 10px 20px;
+  background-color: #ff6600;
+  color: #fff;
+  border: none;
+  border-radius: 10px;    
+  cursor: pointer;
+}
+
+.add-to-cart:hover {
+  background-color: #e65c00;
+}
+
+.seller-header {
+  font-weight: bold;
+  font-size: 1.2em;
+margin-bottom: 2px;
+  cursor: pointer;
+  padding: 10px;
+  background-color: #fff;
+}
+
+.basket-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #fff;
+}
+
+.basket-item-image img {
+  width: 100px;
+  height: auto;
+  border-radius: 5px;
+}
+
+.basket-item-details {
+  margin-left: 15px;
+  flex-grow: 1;
+}
+
+.remove-button {
+  background-color: #ff6600;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.basket-summary {
+  width: 300px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.checkout-button {
+  background-color: #ff6600;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.premium-info {
+  margin-top: 15px;
+}
+
+.premium-button {
+  background-color: #28a745;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.shipping-info {
+  margin-top: 10px;
+}
+
+.group-separator {
+  margin-top: 15px;
+  border-top: 1px solid #ddd;
+}
+
+.item-separator {
+  margin-top: 10px;
+  border-top: 1px solid #ddd;
+}
+
+@media (max-width: 768px) {
+  .basket-content {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .basket-items {
+    margin-right: 0;
+    width: 100%;
+  }
+
+  .basket-summary {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .basket-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .basket-item-image img {
+    width: 80px;
+  }
+
+  .basket-summary {
+    padding: 10px;
+  }
+}

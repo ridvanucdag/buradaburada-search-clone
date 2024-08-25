@@ -1,0 +1,45 @@
+.filter-options {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+
+.filter-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+
+}
+
+.options-dropdown {
+  max-height: 200px;
+  overflow-y: auto;
+  border-top: 1px solid #ccc;
+  padding: 10px;
+}
+
+.options-list {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin: 5px 0;
+  display: flex;
+  align-items: center;
+}
+
+label input {
+  margin-right: 8px;
+}
+
+
+.search-input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}

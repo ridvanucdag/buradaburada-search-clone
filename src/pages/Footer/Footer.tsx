@@ -22,7 +22,7 @@ const Footer: React.FC = () => {
       </div>
 
       <div className="footer-section">
-        <h4>Hepsiburada</h4>
+        <h4>buradaburada</h4>
         <ul>
           <li><a href="#">Satıcı Olmak İstiyorum</a></li>
           <li><a href="#">Hepsipay İşyeri Olmak İstiyorum</a></li>

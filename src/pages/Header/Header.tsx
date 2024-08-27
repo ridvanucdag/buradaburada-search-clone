@@ -4,10 +4,14 @@ import { useSelector } from "react-redux";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import Cart from "../../components/Cart/Cart";
 import "./header.css";
-import logo from "../../image/logo.png";
 import { RootState } from "../../redux/store";
 import AccountOptions from "../../components/Account/Account";
-import { FaCartPlus, FaChevronDown, FaUser, FaMapMarkerAlt } from "react-icons/fa";
+import {
+  FaCartPlus,
+  FaChevronDown,
+  FaUser,
+  FaMapMarkerAlt,
+} from "react-icons/fa";
 import { FilterOptions } from "../../types/Product";
 
 const Header: React.FC = () => {
@@ -25,10 +29,10 @@ const Header: React.FC = () => {
     isDiscounted: false,
     hasCoupon: false,
   });
-  
+
   const accountRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
-  const cartItems = useSelector((state: RootState) => state.cart.items);
+  const cartItems = useSelector((state: RootState) => state?.cart?.items);
 
   const handleSearch = (query: string) => {
     setTimeout(() => {
@@ -38,7 +42,10 @@ const Header: React.FC = () => {
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (accountRef.current && !accountRef.current.contains(event.target as Node)) {
+      if (
+        accountRef.current &&
+        !accountRef.current.contains(event.target as Node)
+      ) {
         setIsAccountOptionsOpen(false);
       }
     };
@@ -62,8 +69,8 @@ const Header: React.FC = () => {
                 { path: "/campaigns", label: "Kampanyalar" },
                 { path: "/women-entrepreneurs", label: "Girişimci Kadınlar" },
                 { path: "/customer-service", label: "Müşteri Hizmetleri" },
-                { path: "/premium", label: "Hepsiburada Premium" },
-                { path: "/be-seller", label: "Hepsiburada'da Satıcı Ol" },
+                { path: "/premium", label: "buradaburada Premium" },
+                { path: "/be-seller", label: "buradaburada'da Satıcı Ol" },
               ]?.map(({ path, label }) => (
                 <li key={path}>
                   <Link to={path}>{label}</Link>
@@ -77,36 +84,44 @@ const Header: React.FC = () => {
       <div className="header-content">
         <div className="container">
           <div className="header-inner">
-            <div className="logo">
-              <Link to="/">
-                <img src={logo} alt="Hepsiburada" />
-              </Link>
-            </div>
+            <Link to="/" className="logo-link">
+              <div className="logo">buradaburada</div>
+            </Link>
+
             <div className="search-bar">
-              <SearchBar setFilterOptions={setFilterOptions} onSearch={handleSearch} />
+              <SearchBar
+                setFilterOptions={setFilterOptions}
+                onSearch={handleSearch}
+              />
             </div>
-            <LocationDropdown
-              isOpen={isLocationDropdownOpen}
-              setIsOpen={setIsLocationDropdownOpen}
-            />
-            <AccountDropdown
-              isOpen={isAccountOptionsOpen}
-              setIsOpen={setIsAccountOptionsOpen}
-              accountRef={accountRef}
-            />
-            <CartDropdown
-              isOpen={isCartOpen}
-              setIsOpen={setIsCartOpen}
-              cartItems={cartItems}
-            />
-          </div>
+
+              <LocationDropdown
+                isOpen={isLocationDropdownOpen}
+                setIsOpen={setIsLocationDropdownOpen}
+              />
+              <AccountDropdown
+                isOpen={isAccountOptionsOpen}
+                setIsOpen={setIsAccountOptionsOpen}
+                accountRef={accountRef}
+              />
+              <CartDropdown
+                isOpen={isCartOpen}
+                setIsOpen={setIsCartOpen}
+                cartItems={cartItems}
+              />
+    
+            </div>
+
         </div>
       </div>
     </header>
   );
 };
 
-const LocationDropdown: React.FC<{ isOpen: boolean; setIsOpen: (open: boolean) => void }> = ({ isOpen, setIsOpen }) => (
+const LocationDropdown: React.FC<{
+  isOpen: boolean;
+  setIsOpen: (open: boolean) => void;
+}> = ({ isOpen, setIsOpen }) => (
   <div
     className="location"
     onMouseEnter={() => setIsOpen(true)}
@@ -117,18 +132,25 @@ const LocationDropdown: React.FC<{ isOpen: boolean; setIsOpen: (open: boolean) =
       <span>Konum</span>
       <span className="sub-location">Ev</span>
     </div>
-    <FaChevronDown className="dropdown-icon-locaiton" />
+    <FaChevronDown className="dropdown-icon-location" />
     {isOpen && (
       <div className="location-dropdown">
         <p>Konumunuzu Belirleyin</p>
-        <p>Adresinizi veya konum bilgilerinizi seçerek özel hizmetleri görebilirsiniz.</p>
+        <p>
+          Adresinizi veya konum bilgilerinizi seçerek özel hizmetleri
+          görebilirsiniz.
+        </p>
         <Link to="/select-location">Yeni Konum Seç</Link>
       </div>
     )}
   </div>
 );
 
-const AccountDropdown: React.FC<{ isOpen: boolean; setIsOpen: (open: boolean) => void; accountRef: React.RefObject<HTMLDivElement> }> = ({ isOpen, setIsOpen, accountRef }) => (
+const AccountDropdown: React.FC<{
+  isOpen: boolean;
+  setIsOpen: (open: boolean) => void;
+  accountRef: React.RefObject<HTMLDivElement>;
+}> = ({ isOpen, setIsOpen, accountRef }) => (
   <div
     className="account"
     onMouseEnter={() => setIsOpen(true)}
@@ -139,7 +161,9 @@ const AccountDropdown: React.FC<{ isOpen: boolean; setIsOpen: (open: boolean) =>
     <div className="account-header">
       <FaUser className="user-icon" />
       <div className="account-info">
-        <Link to="/account" className="account-link">Hesabım</Link>
+        <Link to="/account" className="account-link">
+          Hesabım
+        </Link>
         <p className="account-name">{"Rıdvan Üçdağ"}</p>
       </div>
       <FaChevronDown className="dropdown-icon" />
@@ -148,8 +172,13 @@ const AccountDropdown: React.FC<{ isOpen: boolean; setIsOpen: (open: boolean) =>
   </div>
 );
 
-const CartDropdown: React.FC<{ isOpen: boolean; setIsOpen: (open: boolean) => void; cartItems: any[] }> = ({ isOpen, setIsOpen, cartItems }) => (
-  <Link to="/basket"
+const CartDropdown: React.FC<{
+  isOpen: boolean;
+  setIsOpen: (open: boolean) => void;
+  cartItems: any[];
+}> = ({ isOpen, setIsOpen, cartItems }) => (
+  <Link
+    to="/basket"
     className="basket-cart"
     onMouseEnter={() => setIsOpen(true)}
     onMouseLeave={() => setIsOpen(false)}
@@ -168,6 +197,5 @@ const CartDropdown: React.FC<{ isOpen: boolean; setIsOpen: (open: boolean) => vo
     )}
   </Link>
 );
-
 
 export default Header;

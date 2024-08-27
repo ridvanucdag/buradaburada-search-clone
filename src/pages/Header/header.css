@@ -37,17 +37,40 @@
 }
 
 .header-content {
-  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 20px 30px 20px;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
 }
 
 .header-inner {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
+  width: 100%; 
 }
 
-.logo img {
-  height: 85px;
+.header-inner .search-bar {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+
+
+.logo-link{
+  text-decoration: none;
+}
+.logo {
+font-size: 30px;
+font-weight: 700;
+color: #ff6000;
+ flex-shrink: 0;
 }
 
 .account,
@@ -208,4 +231,47 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   color: #333;
   z-index: 10;
+}
+
+
+@media (max-width: 780px) {
+  
+  .header {
+    padding: 0 5%;
+  }
+
+  .top-nav {
+    flex-direction: column;
+  }
+
+  .top-nav ul {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .top-nav li {
+    margin: 10px 0;
+  }
+
+  .header-content {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .header-inner {
+    flex-direction: column;
+    align-items: center;
+    width: 100%; 
+  }
+
+  .header-inner .search-bar {
+    width: 100%;
+    margin: 10px 0;
+  }
+  .location, .account, .basket-cart {
+    margin-bottom: 20px;
+  }
+
+
 }

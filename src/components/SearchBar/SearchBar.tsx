@@ -41,7 +41,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ setFilterOptions, onSearch }) => 
         value={searchTerm}
         onChange={handleChange}
         onKeyDown={handleKeyDown}
-        className="search-bar"
+        className="search-bar-input"
       />
       <button className="search-button" onClick={handleSearch}>Ara</button>
     </div>

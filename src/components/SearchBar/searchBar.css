@@ -7,7 +7,7 @@
   border-radius: 4px;
   padding: 5px;
   background-color: #fff;
-  width: 550px;
+  width: 600px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: border-color 0.3s;
 }
@@ -22,7 +22,7 @@
   font-size: 1.2em;
 }
 
-.search-bar {
+.search-bar-input {
   flex-grow: 1;
   border: none;
   outline: none;
